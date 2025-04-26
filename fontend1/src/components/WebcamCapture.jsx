@@ -35,7 +35,7 @@ const WebcamCapture = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await axios.get('http://localhost:5002/pokemon');
+        const response = await axios.get('https://handgesture-1-91uu.onrender.com/pokemon');
         setPokemons(response.data);
         if (response.data.length > 0) {
           setCurrentPokemon(response.data[0]);
@@ -66,7 +66,7 @@ const WebcamCapture = () => {
   const capturePokemon = async () => {
     if (!currentPokemon) return;
     try {
-      await axios.post('http://localhost:5001/api/pokemon', currentPokemon);
+      await axios.post('https://handgesture-6mtp.onrender.com/api/pokemon', currentPokemon);
       setMessage(`${currentPokemon.name} captured successfully!`);
       setLastCaptureTime(Date.now());
       handleNext(); // Move to next Pokémon after capture
