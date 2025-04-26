@@ -62,7 +62,7 @@ const WebcamCapture = () => {
               const blob = await fetch(imageSrc).then(res => res.blob());
               formData.append('screenshot', blob, 'screenshot.png');
               
-              await axios.post('http://localhost:5000/api/screenshots/upload', formData, {
+              await axios.post('https://handgesture-6mtp.onrender.com/api/screenshots/upload', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data'
                 }

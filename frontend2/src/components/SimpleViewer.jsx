@@ -44,7 +44,7 @@ const SimpleViewer = () => {
           detectedGesture = 'free';
           // Show image immediately when 3+ fingers are open
           try {
-            const response = await axios.get('http://localhost:5000/api/screenshots/latest', {
+            const response = await axios.get('https://handgesture-6mtp.onrender.com/api/screenshots/latest', {
               timeout: 5000 // 5 second timeout
             });
             if (response.data.imageUrl) {
