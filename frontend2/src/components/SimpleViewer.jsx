@@ -49,7 +49,7 @@ const SimpleViewer = () => {
             setMessage('Searching for Pokémon...');
             
             try {
-              const response = await axios.get('https://handgesture-6mtp.onrender.com/api/last', {
+              const response = await axios.get('http://localhost:5001/api/last', {
                 timeout: 5000
               });
               if (response.data && response.data.data) {
