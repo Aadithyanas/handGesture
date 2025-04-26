@@ -31,8 +31,8 @@ client.connect()
   .then(() => console.log('Connected to Postgres ✅'))
   .catch(err => console.error('Connection error ❌', err.stack));
 
-// Endpoint to get all pokemons
-app.get('/pokemon', async (req, res) => {
+
+app.get('/pokemons', async (req, res) => {
   try {
     const result = await client.query('SELECT * FROM "Pokemon"'); // Correctly referencing the table with quotes
     res.json(result.rows);
@@ -56,7 +56,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const PORT =  5001;
+const PORT =5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
